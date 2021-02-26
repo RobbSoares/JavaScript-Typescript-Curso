@@ -1,0 +1,11 @@
+{
+    "cmake.configureOnOpen": false,
+    "cSpell.enableFiletypes": [
+        "javascript"
+    ],
+    "cSpell.enabled": true,
+    "cSpell.ignoreWords": [
+        "greetings",
+        "surname"
+    ]
+}

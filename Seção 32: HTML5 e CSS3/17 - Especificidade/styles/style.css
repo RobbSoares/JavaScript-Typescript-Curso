@@ -1,0 +1,31 @@
+
+/*
+
+Especificidade
+Empate
+style
+!important - EVITAR!
+
+
+
+ID        Classes, Atributos e Pseudo-classes        ELementos e pseudo-elementos
+1                           0                                       0
+0                           1                                       0
+1                           1                                       0
+
+
+!important
+*/
+
+body#b.bclass p#p.p {
+    background: purple;
+}
+
+#p {
+    background: red;
+}
+
+#p.p {
+    background: yellow;
+}
+

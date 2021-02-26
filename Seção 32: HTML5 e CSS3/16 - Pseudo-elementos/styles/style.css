@@ -1,0 +1,52 @@
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-elementos */
+
+
+
+.form-field::placeholder {
+    color: red;
+    background-color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* p::first-letter {
+    font-size: 150px;
+    display: block;
+    float: left;
+    margin: 0 10px 10px 0;
+}
+
+p::first-line {
+    background: red;
+}
+
+p::selection {
+    background-color: blueviolet;
+    color: white;
+} */
+
+
+
+
+
+
+/* ul li::after {
+    content: ' - ';
+    background-color: red;
+} */

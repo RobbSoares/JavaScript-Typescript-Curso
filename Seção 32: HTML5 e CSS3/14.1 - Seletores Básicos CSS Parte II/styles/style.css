@@ -1,0 +1,67 @@
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Seletor_de_atributos */
+/* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Seletores_CSS */
+
+
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+[meu-atributo*="l"] {
+    color: red;
+}
+
+[checked] {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* [meu-atributo~="valor"] {
+    color: red;
+} */
+
+/*
+
+adjacent sibling selector
+- Pega o primeiro elemento após o irmão ex.:
+.pai h1+p
+
+general sibling selector
+- Pega todos os elementos irmãos ex.:
+.pai h1~p
+
+*/
+
+
+/* .pai h1~p {
+    color: red;
+} */
+
+/* .pai h1+p{
+    color: red;
+} */
+
+/* .pai p+h1{
+    color: yellow;
+} */
+
+/* .pai .um + .dois {
+    color:red;
+} */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Resumindo o que vimos até aqui</title>
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="nav-bar">
+                <ul>
+                    <li class="something"><a href="#first-page">Home</a></li>
+                    <li class="something"><a href="#second-page">Segunda Página</a></li>
+                    <li class="something"><a href="#third-page">Terceira Página</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <main>
+            <div class="first-page" id="first-page">
+
+            </div>
+            <div class="second-page" id="second-page">
+
+            </div>
+            <div class="third-page" id="third-page">
+
+            </div>
+        </main>
+
+    </body>
+</html>

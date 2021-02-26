@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.color-red {
+    color: red;
+}
+
+body div.main-content h2.heading {
+    font-style: italic;
+    color: red;
+}
+
+div {
+    color: initial;
+    margin-left: 20px;
+}
+
+.pai > .filha > .filha{
+    color: red;
+}
