@@ -60,11 +60,7 @@ function getMonth(currentMonth) {
 
 let month = getMonth(currentMonthDay);
 let week = getWeekDay(currentWeekDay);
-let hour = currentDay.getHours();
-let minutes = currentDay.getMinutes();
-let day = currentDay.getDate();
-let year = currentDay.getFullYear();
 
 minutes = minutes < 10 ? '0' + minutes : minutes;
 
-text.innerHTML = `${week}, ${day} de ${month} de ${year} ${hour}:${minutes}`;
+text.innerHTML = `${week}, ${currentDay.getDate()} de ${month} de ${currentDay.getFullYear()} ${currentDay.getHours()}:${currentDay.getMinutes()}`;
