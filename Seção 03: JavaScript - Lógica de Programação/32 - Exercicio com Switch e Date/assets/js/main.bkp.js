@@ -58,11 +58,8 @@ function getMonth(currentMonth) {
     }
 }
 
-
-
 let month = getMonth(currentMonthDay);
 let week = getWeekDay(currentWeekDay);
-
 let hour = currentDay.getHours();
 let minutes = currentDay.getMinutes();
 let day = currentDay.getDate();
