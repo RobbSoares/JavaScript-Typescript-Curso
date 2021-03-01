@@ -1,7 +1,7 @@
 const fruits = ['maçã', 'pêra', 'uva'];
 
 for(let i = 0;  i < fruits.length; i++) {
-    console.log(`índicie ${i}:`, fruits[i]);
+    console.log(`índice ${i}:`, fruits[i]);
 }
 
 
