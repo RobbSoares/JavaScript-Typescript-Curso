@@ -1,69 +1,85 @@
-function clock() {
+const inputTask = document.querySelector('.new-task');
+const btnTask = document.querySelector('.add-task');
+const tasks = document.querySelector('.tasks');
 
-    function getTimeFromSeconds(seconds) {
-        const date = new Date(seconds * 1000);
-        return date.toLocaleTimeString('pt-BR', {
-            hour12: false, 
-            timeZone: 'GMT'
-        });
-    }
-    
-    const clock = document.querySelector('.clock');
-    const btnStart = document.querySelector('.start');
-    const btnStop = document.querySelector('.pause');
-    const btnReset = document.querySelector('.reset');
-    let seconds = 0;
-    let timer;
-    
-    function startClock() {
-        timer = setInterval(function() {
-            seconds++;
-            clock.innerHTML = getTimeFromSeconds(seconds);
-        }, 1000);
-    }
-    
-    
-    document.addEventListener('click', (e) => {
-        const element = e.target;
-        
-        
-        if(element.classList.contains('start')) {
-            clock.classList.remove('paused');
-            clearInterval(timer);
-            startClock();
-        }
-        
-        if(element.classList.contains('pause')) {
-            clock.classList.add('paused');
-            clearInterval(timer);
-        }
-        
-        if(element.classList.contains('reset')) {
-            clock.classList.remove('paused');
-            clearInterval(timer);
-            clock.innerHTML = `00:00:00`;
-            seconds = 0;
-        }
-    });
+function createLi() {
+    const li = document.createElement('li');
+    return li;
 }
 
-clock();
-
-/* btnStart.addEventListener('click', (e) => {
-    clock.classList.remove('paused');
-    clearInterval(timer);
-    startClock();
+inputTask.addEventListener('keypress', function (e) {
+    if (e.keyCode === 13) {
+        if (!inputTask.value) return;
+        createTask(inputTask.value);
+    }
 });
 
-btnStop.addEventListener('click', (e) => {
-    clock.classList.add('paused');
-    clearInterval(timer);
-}); */
+function clearInput() {
+    inputTask.value = '';
+    inputTask.focus();
+}
 
-/* btnReset.addEventListener('click', (e) => {
-    clearInterval(timer);
-    clock.innerHTML = `00:00:00`;
-    seconds = 0;
+function createEraseButton(li) {
+    li.innerText += ' ';
+    const eraseButton = document.createElement('button');
+    eraseButton.innerText = 'Apagar'
+    // eraseButton.classList.add('erase');
+    eraseButton.setAttribute('class', 'erase');
+    eraseButton.setAttribute('title', 'Apagar tarefa');
+    li.appendChild(eraseButton);
+}
+
+function createTask(inputText) {
+    const li = createLi();
+    li.innerHTML = inputText;
+    tasks.appendChild(li);
+    clearInput();
+    createEraseButton(li);
+    saveTasks();
+}
+
+btnTask.addEventListener('click', function (e) {
+    if (!inputTask.value) return;
+    createTask(inputTask.value);
 });
- */
+
+
+document.addEventListener('click', function (e) {
+    const el = e.target;
+    if (el.classList.contains('erase')) {
+        el.parentElement.remove();
+        saveTasks();
+    }
+});
+
+function saveTasks() {
+    const liTasks = tasks.querySelectorAll('li');
+    const tasksList = [];
+
+    for (let task of liTasks) {
+        let taskText = task.innerText;
+        taskText = taskText.replace('Apagar', '').trim();
+        tasksList.push(taskText);
+    }
+    const taskJSON = JSON.stringify(tasksList);
+    localStorage.setItem('tasks', taskJSON);
+}
+
+
+function addSavedTasks() {
+    const tasks = localStorage.getItem('tasks');
+    const taskList = JSON.parse(tasks);
+
+    for(let task of taskList) {
+        createTask(task);
+    }
+
+}
+
+addSavedTasks();
+
+
+
+
+
 
